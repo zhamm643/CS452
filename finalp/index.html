@@ -1,0 +1,127 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CS452</title>
+  <meta name="description" content="Browser for CS452 Code">
+  <meta name="author" content="CS452 Student">
+</head>
+
+<style>
+  #glCanvas {
+    margin-bottom: 10px;
+  }
+  
+  #material {
+    margin-top: 40px;
+  }
+  #object {
+    margin-top: 100px;
+  }
+</style>
+
+<body>
+  <canvas id="glCanvas" width="900" height="600"></canvas>
+  <br>
+  <button onclick="minusFour()">Step0</button>
+  <button onclick="minusThree()">Step1</button>
+  <button onclick="minusTwo()">Step2</button>
+  <button onclick="minusOne()">Step3</button>
+  <button class="grayed-out-button" disabled>Step4</button>
+
+  <div class="control_area" style="width: 640px;">
+    <div class="cam_pos_sliders" style="float: left; width: 50%;">
+      <p>Camera Position:</p>
+      <div>
+        <label for="camX">X:</label>
+        <input type="range" min="-20" max="50" value="40" step="0.1" class="slider" id="camX">
+        <input id="camXVal" name="camXVal" value="40" style="width: 50px;">
+      </div>
+      <div>
+        <label for="camY">Y:</label>
+        <input type="range" min="-20" max="50" value="30" step="0.1" class="slider" id="camY">
+        <input id="camYVal" name="camYVal" value="30" style="width: 50px;">
+      </div>
+      <div>
+        <label for="camZ">Z:</label>
+        <input type="range" min="-20" max="50" value="0" step="0.1" class="slider" id="camZ">
+        <input id="camZVal" name="camZVal" value="0" style="width: 50px;">
+      </div>
+    </div>
+    <div class="cam_look_sliders" style="float: right; width: 50%;">
+      <p>Camera Focus:</p>
+      <div>
+        <label for="lookX">X:</label>
+        <input type="range" min="-20" max="20" value="0" step="0.1" class="slider" id="lookX">
+        <input id="lookXVal" name="lookXVal" value="0" style="width: 50px;">
+      </div>
+      <div>
+        <label for="lookY">Y:</label>
+        <input type="range" min="-20" max="20" value="0" step="0.1" class="slider" id="lookY">
+        <input id="lookYVal" name="lookYVal" value="0" style="width: 50px;">
+      </div>
+      <div>
+        <label for="lookZs">Z:</label>
+        <input type="range" min="-20" max="20" value="0" step="0.1" class="slider" id="lookZ">
+        <input id="lookZVal" name="lookZVal" value="0" style="width: 50px;">
+      </div>
+    </div>
+  </div>
+<p></p>
+  <div>
+    <p>Objects: Platform, Bunny, Sphere, Cube
+    </p>
+    <p>
+      Effects: Cube Mapping, Fog Effect, Normal Map
+    </p>
+    <p>
+      Shaders: Different shader used for each object
+    </p>
+  </div>
+
+  <label for="material"><strong>Material:</strong></label>
+  <select name="material" id="material" style="margin-right: 50px;"disabled>
+    <option value="Brass">Brass</option>
+    <option value="Bronze">Bronze</option>
+    <option value="Polished Bronze">Polished Bronze</option>
+    <option value="Chrome">Chrome</option>
+    <option value="Copper">Copper</option>
+    <option value="Polished Copper">Polished Copper</option>
+    <option value="Gold">Gold</option>
+    <option value="Polished Gold">Polished Gold</option>
+    <option value="Pewter">Pewter</option>
+    <option value="Silver">Silver</option>
+    <option value="Polished Silver">Polished Silver</option>
+    <option value="Emerald">Emerald</option>
+    <option value="Jade">Jade</option>
+    <option value="Obsidian">Obsidian</option>
+    <option value="Pearl">Pearl</option>
+    <option value="Ruby">Ruby</option>
+    <option value="Turquoise">Turquoise</option>
+    <option value="Black Plastic">Black Plastic</option>
+    <option value="Black Rubber">Black Rubber</option>
+  </select>
+
+  <label for="object"><strong>Object:</strong></label>
+  <select name="object" id="object" style="margin-left: 10px;"disabled>
+    <option value="Cube">Cube</option>
+    <option value="Bunny">Bunny</option>
+    <option value="Sphere">Sphere</option>
+  </select>
+
+
+  <!-- If you add a file, make sure to include it here! -->
+  <script src="js/main.js"></script>
+  <script src="js/tangent-api.js"></script>
+  <script src="js/shader.js"></script>
+  <script src="js/vertex-data.js"></script>
+  <script src="js/drawable.js"></script>
+  <script src="js/helpers.js"></script>
+  <script src="js/obj-loader.js"></script>
+  <!-- http://glmatrix.net/docs/ -->
+  <script src="js/gl-matrix-min.js"></script>
+  <script src="js/page-change.js"></script>
+
+</body>
+</html>
